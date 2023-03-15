@@ -1,0 +1,7 @@
+export * from './CareSection'
+export * from './HeroSection'
+export * from './WorkSection'
+export * from './SupportSection'
+export * from './CommunitySection'
+export * from './PartnersSection'
+export * from './Footer'

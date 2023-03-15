@@ -1,0 +1,30 @@
+.carousel .slide .flex img {
+  width: 100px;
+}
+.carousel .slide {
+  margin: 0;
+  position: relative;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel.slideer {
+  position: initial;
+  display: flex;
+}
+
+.carousel .selected .flex {
+  filter: drop-shadow(9px 17px 47px rgba(60, 60, 60, 0.25));
+  margin-top: 58px;
+  transition: all 1s;
+}
+
+.partner .carousel .slide {
+  margin: 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
