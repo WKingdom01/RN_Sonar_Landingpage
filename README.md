@@ -14,6 +14,23 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
+### `npm run lint`
+
+To check lint error
+
+### `npm run lint:fix`
+
+To fix lint errors
+
+### `npm run format`
+
+To format code by using prettier
+
+### `npm run prepare`
+
+To install git hooks by using husky
+
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
