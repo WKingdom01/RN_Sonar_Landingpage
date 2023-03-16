@@ -6,5 +6,7 @@
   "trailingComma": "all",
   "semi": false,
   "bracketSameLine": true,
-  "bracketSpacing": true
+  "bracketSpacing": true,
+  "jsxBracketSameLine": true,
+  "space-in-parens": [1, "always"]
 }

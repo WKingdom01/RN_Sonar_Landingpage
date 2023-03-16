@@ -10,6 +10,7 @@ import {
 } from '@/components/Home'
 
 const Home = () => {
+ 
   return (
     <div className="flex flex-col space-y-8">
       <HomeHeroSection />

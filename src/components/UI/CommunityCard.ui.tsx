@@ -13,7 +13,7 @@ export const CommunityCard: React.FC<CommunityCardProps> = ({
   name,
 }: CommunityCardProps) => {
   return (
-    <div className="flex relative justify-center bg-white w-[80%] h-[100%]  rounded-lg px-[20px] pt-[48px] pb-[10px] mt-[82px]">
+    <div className="flex relative justify-center bg-white w-[80%] h-[100%]  rounded-lg px-[20px] pt-[48px] pb-[10px] mt-[82px] hover:cursor-pointer">
       <img
         className="absolute top-[-48px] left-[50%] translate-x-[-50%] rounded-full bg-[#016099] p-[18px]"
         src={icon}

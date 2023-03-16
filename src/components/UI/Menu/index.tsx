@@ -21,8 +21,8 @@ export const Menu: React.FC<MenuProps> = ({ setCurrentTab, currentTab }: MenuPro
       animate={isOpen ? 'open' : 'closed'}
       custom={height}
       ref={containerRef}
-      className="absolute -top-[15px]">
-      <MenuToggle toggle={() => toggleOpen()} />
+      className="absolute -top-[25px]">
+      <MenuToggle toggle={() =>toggleOpen() } />     
       <Navigation setCurrentTab={setCurrentTab} currentTab={currentTab} />
     </motion.nav>
   )

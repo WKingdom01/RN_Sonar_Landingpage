@@ -10,46 +10,47 @@ export interface NavigationProps {
 export const Navigation: React.FC<NavigationProps> = ({
   setCurrentTab,
   currentTab,
-}: NavigationProps) => {
+}: NavigationProps) => {  
+
   return (
-    <motion.ul variants={menuVariantsAnim} className="flex flex-col gap-1 p-0">
-      <a href="#about" onClick={() => setCurrentTab('about')}>
+    <motion.ul variants={menuVariantsAnim} className="flex flex-col min-w-[350px] gap-1 p-0 backdrop-blur-sm">
+      <a href="#about" onClick={(e) =>{ setCurrentTab('about') ; e.preventDefault() }}>
         <motion.li
           variants={menuVariantsItemAnim}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-blue-dark/50">
+          className="bg-blue-dark">
           <span
-            className={`text-[16px] mx-[25px] font-semibold leading-[19px]  ${
-              currentTab === 'about' ? 'text-[#CB00FF] ' : ' text-[#ffffff] '
+            className={`text-[16px] mx-[25px] font-semibold leading-[19px] underline-offset-2 decoration-white text-white ${
+              currentTab === 'about' && 'underline'
             }`}>
             About
           </span>
         </motion.li>
       </a>
-      <a href="#faq" onClick={() => setCurrentTab('faq')}>
+      <a href="#faq" onClick={(e) =>{ setCurrentTab('faq') ; e.preventDefault() }}>
         <motion.li
           variants={menuVariantsItemAnim}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-blue-dark/50">
+          className="bg-blue-dark">
           <span
-            className={`text-[16px]  mx-[25px] font-semibold  leading-[19px]  ${
-              currentTab === 'faq' ? 'text-[#CB00FF] ' : ' text-[#ffffff] '
+            className={`text-[16px]  mx-[25px] font-semibold  leading-[19px] underline-offset-2 decoration-white text-white ${
+              currentTab === 'faq' && 'underline'
             }`}>
             FAQ
           </span>
         </motion.li>
       </a>
-      <a href="#contact" onClick={() => setCurrentTab('contact')}>
+      <a href="#contact" onClick={(e) =>{ setCurrentTab('contact') ; e.preventDefault() }}>
         <motion.li
           variants={menuVariantsItemAnim}
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.95 }}
-          className="bg-blue-dark/50">
+          className="bg-blue-dark">
           <span
-            className={`text-[16px]  mx-[25px]  font-semibold leading-[19px]   ${
-              currentTab === 'contact' ? 'text-[#CB00FF] ' : ' text-[#ffffff] '
+            className={`text-[16px]  mx-[25px]  font-semibold leading-[19px] underline-offset-2 decoration-white text-white  ${
+              currentTab === 'contact' && 'underline'
             }`}>
             Contact
           </span>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import { Menu } from './UI/Menu'
 import { Button } from './UI'
 import Logo from '@/assets/icons/logo.svg'
@@ -6,13 +6,38 @@ import { motion } from 'framer-motion'
 import { headerYVariantAnim } from '../animations'
 const Header = () => {
   const [ currentTab, setCurrentTab ] = useState('about')
+  const [ active, setActive ] = useState(false)
+  
+  const onScroll = () => {
+    if(window.scrollY > 50){
+      setActive(true)
+    }else{
+      setActive(false)
+    }
+  }
+
+  useEffect(()=>{
+  
+    window.addEventListener('scroll', onScroll)
+    return () => window.removeEventListener('scroll', onScroll)
+  
+  },[])
+
+  useMemo(()=>{
+    const obj = document.querySelector('#'+currentTab)
+    if(obj){
+      obj.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  },[ currentTab ])
+  
   return (
     <motion.div
       variants={headerYVariantAnim}
       initial="hidden"
       animate="visible"
+      viewport={{ once: true }}
       className="fixed top-0 z-50 w-full overflow-show">
-      <div className="backdrop-blur-sm shadow-3xl pt-[42px] pb-[37px] px-[20px] lg:px-[55px] flex justify-center  items-center  h-[107px]">
+      <div className={`backdrop-blur-sm ${active && 'shadow-3xl'} pt-[42px] pb-[37px] px-[20px] lg:px-[55px] flex justify-center  items-center  h-[107px]`}>
         <div className="hidden lg:contents">
           <img src={Logo} alt="logo" className="left-[]" />
         </div>
@@ -23,7 +48,7 @@ const Header = () => {
               className={`text-[16px] mx-[10px] xl:[25px] font-semibold leading-[19px] transition-all hover:-translate-y-0.5 text-black	underline-offset-8 decoration-blue-dark ${
                 currentTab === 'about' && 'underline'
               } `}
-              onClick={() => setCurrentTab('about')}>
+              onClick={(e) => {setCurrentTab('about'); e.preventDefault()}}>
               ABOUT
             </a>
             <a
@@ -31,7 +56,7 @@ const Header = () => {
               className={`text-[16px] mx-[10px] xl:[25px] font-semibold leading-[19px] transition-all hover:-translate-y-0.5 text-black	underline-offset-8 decoration-blue-dark ${
                 currentTab === 'faq' && 'underline'
               } `}
-              onClick={() => setCurrentTab('faq')}>
+              onClick={(e) => {setCurrentTab('faq'); e.preventDefault()}}>
               FAQ
             </a>
 
@@ -40,7 +65,7 @@ const Header = () => {
               className={`text-[16px] mx-[10px] xl:[25px] font-semibold leading-[19px] transition-all hover:-translate-y-0.5 text-black	underline-offset-8 decoration-blue-dark ${
                 currentTab === 'contact' && 'underline'
               } `}
-              onClick={() => setCurrentTab('contact')}>
+              onClick={(e) => {setCurrentTab('contact'); e.preventDefault()}}>
               Contact
             </a>
           </ul>

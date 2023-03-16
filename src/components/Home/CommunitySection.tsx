@@ -5,7 +5,6 @@ import { motion } from 'framer-motion'
 import { CommunityCard } from '../UI'
 import Prev from '@/assets/icons/prev.svg'
 import Next from '@/assets/icons/next.svg'
-import { carouselAnim, titleAnim } from '@/animations'
 import { COMMUNITYCARDS } from '@/consts'
 
 // import Youth from '@/assets/images/support_youth.jpg'
@@ -57,16 +56,30 @@ export const CommunitySection = () => {
   return (
     <section className="pt-[61px] pb-[110px] px-[5px] sm:px-[40px]  lg:px-[60px] xl:px-[100px] 2xl:px-[140px] bg-sky-light rounded-tr-[100px] rounded-bl-[100px] lg:rounded-tr-[200px] lg:rounded-bl-[200px]">
       <motion.p
-        initial="hidden"
-        whileInView="visible"
-        variants={titleAnim}
+        initial={{ y: 50, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 2,
+            type: 'spring',
+          },
+        }}
+        viewport={{ once: true }}
         className="text-[32px] font-bold mb-8">
         Our Community Loves Sonar
       </motion.p>
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={carouselAnim}
+        initial={{ scale: 0, opacity: 0 }}
+        whileInView={{
+          scale: 1,
+          opacity: 1,
+          transition: {
+            duration: 2,
+            type: 'spring',
+          },
+        }}
+        viewport={{ once: true }}
         className="relative px-[5px] sm:px-[100px] lg:px-[120px] xl:px-[140px]">
         <button className="hidden sm:block absolute left-1 top-[50%] -translate-y-[50%] w-[70px]">
           <img src={Prev} alt="Prev" onClick={onPrev} width="70" />
@@ -80,14 +93,11 @@ export const CommunitySection = () => {
           selectedItem={currentSlide}
           onChange={updateCurrentSlide}
           showIndicators={false}
-          showArrows={false}>
+          showArrows={false}
+          autoPlay={true}
+        >
           {COMMUNITYCARDS.map((card, index) => (
-            <CommunityCard
-              key={index}
-              icon={card.icon}
-              text={card.text}
-              name={card.name}
-            />
+            <CommunityCard key={index} icon={card.icon} text={card.text} name={card.name} />
           ))}
         </Carousel>
 

@@ -1,7 +1,6 @@
 import React from 'react'
 import './style.css'
 import { motion } from 'framer-motion'
-import { careItemAnim } from '@/animations'
 
 interface CareCardProps {
   icon: string
@@ -14,8 +13,17 @@ export const CareCard: React.FC<CareCardProps> = (props: CareCardProps) => {
   const { icon, percent, text, boldText } = props
   return (
     <motion.div
-      variants={careItemAnim}
-      className="relative flex justify-center bg-white mx-[20px] rounded-[18px] px-[20px] pt-[48px] pb-[40px] drop-shadow-3xl mt-[82px] hover:scale-105 ">
+      initial={{ scale: 0, opacity: 0 }}
+      whileInView={{
+        scale: 1,
+        opacity: 1,
+        transition: {
+          duration: 2,
+          type: 'spring',
+        },
+      }}
+      viewport={{ once: true }}
+      className="relative flex justify-center bg-white mx-[20px] rounded-[18px] px-[20px] pt-[48px] pb-[40px] drop-shadow-3xl mt-[82px] cursor-pointer hover:shadow-3xl">
       <img
         className="absolute top-[-38px] left-[50%] translate-x-[-50%] rounded-full bg-[#016099] p-[18px]"
         src={icon}

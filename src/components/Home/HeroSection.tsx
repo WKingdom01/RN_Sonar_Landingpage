@@ -3,7 +3,7 @@ import peopleImg from '@/assets/images/dashboard_hero_people.png'
 import consoleImg from '@/assets/images/dashboard_hero_console.png'
 import { Button } from '../UI'
 import { motion } from 'framer-motion'
-import { heroDescrptionContainerAnim, heroScaleVariantAnim, heroItemAnim } from '../../animations'
+import { heroDescrptionContainerAnim, heroItemAnim } from '../../animations'
 
 export const HomeHeroSection = () => (
   <section
@@ -14,12 +14,22 @@ export const HomeHeroSection = () => (
       variants={heroDescrptionContainerAnim}
       initial="hidden"
       whileInView="visible"
-      className="px-2 lg:text-left">
-      <motion.h3 variants={heroItemAnim} className="text-[26px] lg:text-[32px] font-bold">
+      viewport={{ once: true }}
+      className="px-2 lg:text-left"
+    >
+      <motion.h3 
+        variants={heroItemAnim} 
+        viewport={{ once: true }} 
+        className="text-[26px] lg:text-[32px] font-bold"
+      >
         We proactively detect signs of mental health concerns in youth so they can get the support
         they need early. We intervene before things get serious.
       </motion.h3>
-      <motion.p variants={heroItemAnim} className="text-[14px] py-[24px]">
+      <motion.p 
+        viewport={{ once: true }} 
+        variants={heroItemAnim} 
+        className="text-[14px] py-[24px]"
+      >
         It takes on average 11 years from the first symptoms of mental illness to receive any sort
         of treatment. We cut that short by identifying trends in topics and phrases in youth’s
         online activity and surveys to support youth ages 13+ when they may be at risk for
@@ -28,7 +38,7 @@ export const HomeHeroSection = () => (
         journey, we notify youth’s support network when they’re at risk and equip them with the
         tools and recommendations they need to support youth.{' '}
       </motion.p>
-      <motion.div variants={heroItemAnim} className="flex justify-center gap-x-4">
+      <motion.div viewport={{ once: true }} variants={heroItemAnim} className="flex justify-center gap-x-4">
         <Button
           text="Join Now"
           styleContent="text-[16px] px-[5px] sm:px-[33px] sm:py-[19px] drop-shadow-3xl"
@@ -42,10 +52,18 @@ export const HomeHeroSection = () => (
     </motion.div>
 
     <motion.div
-      variants={heroScaleVariantAnim}
-      initial="hidden"
-      whileInView="visible"
-      className="flex items-center justify-center">
+      initial={{ scale: 0, opacity: 0 }}
+      whileInView={{
+        scale: 1,
+        opacity: 1,
+        transition: {
+          duration: 2,
+          type: 'spring',
+        },
+      }}   
+      viewport={{ once: true }}
+      className="flex items-center justify-center"
+    >
       <div className="flex  flex-col md:flex-row lg:flex-col gap-2 px-[10px] xl:justify-center xl:flex-row xl:relative xl:w-[614px] xl:h-[500px]">
         <img
           className="max-w-[300px] md:max-w-[380px] lg:w-[426px] xl:max-w-[345px] mx-auto xl:absolute xl:right-[16px] z-0"

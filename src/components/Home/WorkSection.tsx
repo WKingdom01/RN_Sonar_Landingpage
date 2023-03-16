@@ -5,7 +5,6 @@ import Work1 from '@/assets/images/work1.png'
 import Work2 from '@/assets/images/work2.png'
 import Work3 from '@/assets/images/work3.png'
 import Arrow from '@/assets/images/arrow.svg'
-import { ArrowAnim, titleAnim, workContainerAnim, workItemAnim } from '@/animations'
 
 export const WorkSection = () => (
   <section
@@ -13,25 +12,47 @@ export const WorkSection = () => (
     className="bg-[#EDC5FF]/40 pt-[56px] pb-[96px] rounded-tr-[100px] rounded-bl-[100px] lg:rounded-tr-[200px] lg:rounded-bl-[200px]">
     <motion.p
       className="text-[32px] font-bold"
-      initial="hidden"
-      whileInView="visible"
-      variants={titleAnim}>
+      initial={{ y: 50, opacity: 0 }}
+      whileInView={{
+        y: 0,
+        opacity: 1,
+        transition: {
+          duration: 2,
+          type: 'spring',
+        },
+      }}
+      viewport={{ once: true }}
+    >
       How Sonar Works
     </motion.p>
     <div className="relative py-20 lg:px-[50px] lx:px-[162px] flex justify-center">
       <motion.div
-        initial="hidden"
-        whileInView="visible"
-        variants={ArrowAnim}
-        className="absolute w-full opacity-0 lg:opacity-100 px-[20px] sm:px-[100px] md:px-[200px] lg:px[100px] xl:px-[80px] top-52">
+        initial={{ y: -50, opacity: 0 }}
+        whileInView={{
+          y: 0,
+          opacity: 1,
+          transition: {
+            duration: 2,
+            type: 'spring',
+          },
+        }}
+        viewport={{ once: true }}
+        className="absolute w-full hidden lg:block px-[20px] sm:px-[100px] md:px-[200px] lg:px[40px] xl:px-[80px] top-52">
         <img src={Arrow} alt="arrow" className="w-full" />
       </motion.div>
-      <motion.div
-        className="grid w-full gap-6 lg:grid-cols-3 place-content-center place-items-center"
-        initial="hidden"
-        whileInView="visible"
-        variants={workContainerAnim}>
-        <motion.div variants={workItemAnim} className="relative lg:text-start w-[300px] h-[720px]">
+      <motion.div className="grid w-full gap-6 lg:grid-cols-3 place-content-center place-items-center">
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 2,
+              type: 'spring',
+            },
+          }}
+          viewport={{ once: true }}
+          className="relative lg:text-start w-[300px] h-[720px]">
           <WorkImageCard src={Work1} />
           <div className="flex flex-col mt-2 space-y-4 ">
             <p className="text-[22px] text-black-light font-bold">
@@ -71,7 +92,18 @@ export const WorkSection = () => (
           </div>
         </motion.div>
 
-        <motion.div variants={workItemAnim} className="relative lg:text-start w-[300px] h-[720px]">
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 2,
+              type: 'spring',
+            },
+          }}
+          viewport={{ once: true }}
+          className="relative lg:text-start w-[300px] h-[720px]">
           <WorkImageCard src={Work2} />
           <div className="flex flex-col mt-2 space-y-4">
             <p className="text-[22px] text-black-light font-bold">
@@ -98,7 +130,18 @@ export const WorkSection = () => (
           </div>
         </motion.div>
 
-        <motion.div variants={workItemAnim} className="relative lg:text-start w-[300px] h-[720px]">
+        <motion.div
+          initial={{ y: 200, opacity: 0 }}
+          whileInView={{
+            y: 0,
+            opacity: 1,
+            transition: {
+              duration: 2,
+              type: 'spring',
+            },
+          }}
+          viewport={{ once: true }}
+          className="relative lg:text-start w-[300px] h-[720px]">
           <WorkImageCard src={Work3} />
           <div className="flex flex-col mt-2 space-y-4">
             <p className="text-[22px] text-black-light font-bold">

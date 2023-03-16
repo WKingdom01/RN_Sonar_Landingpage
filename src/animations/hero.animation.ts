@@ -1,17 +1,3 @@
-export const heroScaleVariantAnim = {
-  hidden: { scale: 0, opacity: 0 },
-  visible: {
-    scale: 1,
-    opacity: 1,
-    transition: {
-      duration: 1,
-      type: 'spring',
-      stiffness: 260,
-      damping: 20,
-    },
-  },
-}
-
 export const heroDescrptionContainerAnim = {
   hidden: { opacity: 1, scale: 0 },
   visible: {
@@ -29,5 +15,8 @@ export const heroItemAnim = {
   visible: {
     y: 0,
     opacity: 1,
+    transition:{
+      duration: 1
+    }
   },
 }
