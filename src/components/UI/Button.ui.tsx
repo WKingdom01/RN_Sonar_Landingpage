@@ -18,7 +18,7 @@ export const Button: React.FC<ButtonProp> = ({
       className={` ${
         filled ? 'bg-blue-dark text-white' : 'bg-transparent text-[#016099]'
       } ${styleContent} font-semibold  py-2 border-2 border-[#016099] border-solid  rounded-[8px] transition-all hover:scale-105`}>
-      <p className={`${padContent && ' px-2 sm:px-8'}`}>{text}</p>
+      <p className={`${padContent && ' px-2 sm:px-8 lg:px-2 xl:px-8'}`}>{text}</p>
     </button>
   )
 }
