@@ -93,7 +93,9 @@ export const PartnersSection: React.FC = () => {
           onChange={updateCurrentSlide}
           showIndicators={false}
           showArrows={false}
-          autoPlay={true}>
+          autoPlay={true}
+          showThumbs={false}
+        >
           {PARTNERCARDS.map((url, index) => (
             <PartnerCard key={index} url={url} />
           ))}

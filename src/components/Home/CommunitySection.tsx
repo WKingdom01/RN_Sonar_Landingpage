@@ -95,6 +95,7 @@ export const CommunitySection = () => {
           showIndicators={false}
           showArrows={false}
           autoPlay={true}
+          showThumbs={false}
         >
           {COMMUNITYCARDS.map((card, index) => (
             <CommunityCard key={index} icon={card.icon} text={card.text} name={card.name} />
