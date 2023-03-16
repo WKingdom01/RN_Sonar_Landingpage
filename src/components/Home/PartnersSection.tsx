@@ -17,7 +17,6 @@ export const PartnersSection: React.FC = () => {
   }, [])
 
   const onResize = () => {
-    console.warn(window.innerWidth)
     if (window.innerWidth < 1024) {
       setPercent(100)
       setCurrentSlide(4)
