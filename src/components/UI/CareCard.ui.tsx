@@ -15,7 +15,7 @@ export const CareCard: React.FC<CareCardProps> = (props: CareCardProps) => {
   return (
     <motion.div
       variants={careItemAnim}
-      className="relative flex justify-center bg-white mx-[20px] rounded-[18px] px-[20px] pt-[48px] pb-[40px] drop-shadow-3xl mt-[82px] ">
+      className="relative flex justify-center bg-white mx-[20px] rounded-[18px] px-[20px] pt-[48px] pb-[40px] drop-shadow-3xl mt-[82px] hover:scale-105 ">
       <img
         className="absolute top-[-38px] left-[50%] translate-x-[-50%] rounded-full bg-[#016099] p-[18px]"
         src={icon}

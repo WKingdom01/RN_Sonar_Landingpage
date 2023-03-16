@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'
 import { titleAnim, carouselAnim } from '@/animations'
 import Prev from '@/assets/icons/prev1.svg'
 import Next from '@/assets/icons/next1.svg'
-import { PARTNERCARDS } from '@/const'
+import { PARTNERCARDS } from '@/consts'
 import { PartnerCard } from '../UI'
 
 

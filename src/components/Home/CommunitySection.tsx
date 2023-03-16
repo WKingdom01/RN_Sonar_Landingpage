@@ -6,7 +6,7 @@ import { CommunityCard } from '../UI'
 import Prev from '@/assets/icons/prev.svg'
 import Next from '@/assets/icons/next.svg'
 import { carouselAnim, titleAnim } from '@/animations'
-import { COMMUNITYCARDS } from '@/const'
+import { COMMUNITYCARDS } from '@/consts'
 
 // import Youth from '@/assets/images/support_youth.jpg'
 

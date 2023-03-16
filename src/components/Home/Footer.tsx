@@ -36,16 +36,16 @@ export const Footer = () => {
                 <input
                   type={'email'}
                   placeholder="pods@getsonar.org"
-                  className="h-[50px] pl-[55px] pr-[20px] md:pr-[130px] m-0 text-black-light "
+                  className="h-[50px] pl-[55px] pr-[20px] md:pr-[130px] m-0 text-black-light outline-none focus:shadow-3xl active:shadow-3xl "
                 />
                 <img
                   src={Email}
                   alt="email"
-                  className="absolute top-[15px] left-[17px] w-[26px] h-[20px]"
+                  className="absolute top-[15px] left-[17px] w-[26px] h-[20px] "
                 />
               </div>
               <button className="bg-yellow text-[16px] font-bold text-black-light py-3 px-4 md:px-11 rounded-[8px] transition-all hover:scale-105">
-                Sing up
+                Sign up
               </button>
             </div>
           </div>

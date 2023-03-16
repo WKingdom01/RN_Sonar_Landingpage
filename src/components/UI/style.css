@@ -28,3 +28,16 @@
   justify-content: center;
   align-items: center;
 }
+
+.slider-wrapper{
+  padding: 120px 0px;
+}
+
+.arrow_item{
+  width: 56%;
+  overflow: visible;
+  stroke: #fff;
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}

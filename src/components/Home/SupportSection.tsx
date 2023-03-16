@@ -3,10 +3,10 @@ import { motion } from 'framer-motion'
 import { SupportCard } from '../UI'
 import { titleAnim } from '@/animations'
 import { supportContainerAnim } from '@/animations'
-import { SUPPORTCARDS } from '@/const'
+import { SUPPORTCARDS } from '@/consts'
 export const SupportSection = () => {
   return (
-    <section className="py-[104px] px-[10px] sm:px-[50px] md:px-[120px] 2xl:px-[300px]">
+    <section className="py-[104px] px-[80px] sm:px-[180px] md:px-[250px] lg:px-[120px] 2xl:px-[300px]">
       <motion.p
         initial="hidden"
         whileInView="visible"

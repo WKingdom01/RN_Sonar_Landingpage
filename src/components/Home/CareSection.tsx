@@ -1,6 +1,6 @@
 import React from 'react'
 import { CareCard } from '../UI'
-import { CARECARDS } from '@/const'
+import { CARECARDS } from '@/consts'
 import { motion } from 'framer-motion'
 import { careDescrptionContainerAnim, titleAnim } from '@/animations'
 export const CareSection = () => {
@@ -10,6 +10,7 @@ export const CareSection = () => {
         initial="hidden"
         whileInView="visible"
         variants={titleAnim}
+        viewport={{ once: true }}
         className="text-[28px] font-bold lg:text-[32px]">
         Why We Care
       </motion.h3>
@@ -17,7 +18,9 @@ export const CareSection = () => {
         variants={careDescrptionContainerAnim}
         initial="hidden"
         whileInView="visible"
-        className="grid lg:grid-cols-2 xl:grid-cols-4">
+        className="grid lg:grid-cols-2 xl:grid-cols-4"
+        
+      >
         {CARECARDS.map((careCard, index) => (
           <CareCard
             key={index}

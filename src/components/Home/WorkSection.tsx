@@ -1,11 +1,11 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { Button, WorkImageCard } from '../UI'
-import Work1 from '@/assets/images/work1.jpg'
-import Work2 from '@/assets/images/work2.jpg'
-import Work3 from '@/assets/images/work3.jpg'
+import Work1 from '@/assets/images/work1.png'
+import Work2 from '@/assets/images/work2.png'
+import Work3 from '@/assets/images/work3.png'
 import Arrow from '@/assets/images/arrow.svg'
-import { titleAnim, workContainerAnim, workItemAnim } from '@/animations'
+import { ArrowAnim, titleAnim, workContainerAnim, workItemAnim } from '@/animations'
 
 export const WorkSection = () => (
   <section
@@ -22,9 +22,9 @@ export const WorkSection = () => (
       <motion.div
         initial="hidden"
         whileInView="visible"
-        variants={titleAnim}
+        variants={ArrowAnim}
         className="absolute w-full opacity-0 lg:opacity-100 px-[20px] sm:px-[100px] md:px-[200px] lg:px[100px] xl:px-[80px] top-52">
-        <img src={Arrow} alt="arrow" className="w-full " />
+        <img src={Arrow} alt="arrow" className="w-full" />
       </motion.div>
       <motion.div
         className="grid w-full gap-6 lg:grid-cols-3 place-content-center place-items-center"
